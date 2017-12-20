@@ -1,0 +1,82 @@
+<android.support.design.widget.CoordinatorLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:sothree="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+<android.support.v4.widget.DrawerLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:sothree="http://schemas.android.com/tools"
+    android:id="@+id/drawer_layout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+     <android.support.design.widget.CoordinatorLayout
+         android:layout_width="match_parent"
+         android:layout_height="match_parent">
+
+        <android.support.design.widget.AppBarLayout
+            android:id="@+id/appbar"
+            android:padding="15dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:minHeight="?attr/actionBarSize"
+            android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+            android:background="@android:color/transparent">
+
+    <android.support.v7.widget.Toolbar
+        android:id="@+id/toolbar"
+        android:layout_height="?attr/actionBarSize"
+        app:layout_collapseMode="pin"
+        android:minHeight="?attr/actionBarSize"
+        android:layout_width="match_parent"
+        app:titleTextColor="@color/grey"
+        android:background="@android:color/white"
+        app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light">
+    </android.support.v7.widget.Toolbar>
+
+   </android.support.design.widget.AppBarLayout>
+
+
+        <fragment
+            android:id="@+id/map"
+            android:name="com.google.android.gms.maps.SupportMapFragment"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            sothree:context="com.example.codingmountain.googlemap_clone_bottomsheetlayout.MapsActivity" />
+
+
+         <android.support.design.widget.FloatingActionButton
+             android:id="@+id/fab"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:src="@drawable/ic_my_location_black_24dp"
+             app:elevation="6dp"
+             app:pressedTranslationZ="12dp"
+             app:layout_anchor="@id/map"
+             android:layout_marginLeft="16dp"
+             android:layout_marginRight="16dp"
+             android:layout_marginBottom="66dp"
+             app:backgroundTint="#ffffff"
+             app:layout_anchorGravity="bottom|right|end"
+             >
+
+         </android.support.design.widget.FloatingActionButton>
+
+     </android.support.design.widget.CoordinatorLayout>
+
+    </FrameLayout>
+
+</android.support.v4.widget.DrawerLayout>
+
+   <include layout="@layout/bottomsheet_layout"></include>
+
+</android.support.design.widget.CoordinatorLayout>
+
